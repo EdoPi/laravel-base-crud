@@ -24,5 +24,12 @@
         </tbody>
       </table>
 </div>
+<hr>
+<h3>Descrizione</h3>
+<hr>
+<div class="description-container">
+    <p>{!!$beer->description!!}</p>
+
+</div>
 @endsection
 

@@ -21,7 +21,7 @@
                 <tr class="list-table">
                     <td scope="row">{{$beers->id}}</td>
                     <td><a href="beers/{{$beers->id}}">{{$beers->name}}</a></td>
-                    <td>{{$beers->alchool_graduation}}</td>
+                    <td>{{$beers->alchool_graduation}} °</td>
                     <td>{{$beers->fermentation_type}}</td>
                     <td>{{$beers->color}}</td>
                     <td><a href="beers/{{$beers->id}}"><img src="{{$beers->image}}" alt="" style="height: 100px"></a></td>
