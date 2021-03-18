@@ -6,3 +6,33 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+
+.image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.background-list{
+    height: 500px;
+    background-image: url(../../public/img/beer-bg.jpeg);
+    background-size: cover;
+}
+
+.table-container{
+    text-align: center;
+
+    .title-table{
+        font-size: 20px;
+    }
+
+    .list-table{
+        font-size: 18px;
+
+        > td{
+            vertical-align: middle;
+        }
+    }
+}

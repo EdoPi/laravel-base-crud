@@ -10002,3 +10002,28 @@ h3 {
     border-color: #dee2e6;
   }
 }
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.background-list {
+  height: 500px;
+  background-image: url(/images/beer-bg.jpeg?4f1c15e8e818ae0a2541c79ecbeb9802);
+  background-size: cover;
+}
+
+.table-container {
+  text-align: center;
+}
+.table-container .title-table {
+  font-size: 20px;
+}
+.table-container .list-table {
+  font-size: 18px;
+}
+.table-container .list-table > td {
+  vertical-align: middle;
+}

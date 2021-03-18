@@ -43,12 +43,12 @@ class BeerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $beer
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Beer $beer)
     {
-        //
+        return view('Beers.beer', compact('beer'));
     }
 
     /**

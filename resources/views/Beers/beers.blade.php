@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <title>Document</title>
-</head>
-<body>
+@extends('layout')
+
+@section('main-content')
+<div class="background-list">
+
+</div>
+<div class="table-container">
     <table class="table">
         <thead class="thead-dark">
-          <tr>
+          <tr class="title-table">
             <th scope="col">#</th>
             <th scope="col">Tipo</th>
             <th scope="col">Gradazione</th>
@@ -21,16 +18,16 @@
         </thead>
         <tbody>
             @foreach ($beers as $beers)
-                <tr>
-                    <th scope="row">{{$beers->id}}</th>
-                    <td>{{$beers->name}}</td>
+                <tr class="list-table">
+                    <td scope="row">{{$beers->id}}</td>
+                    <td><a href="beers/{{$beers->id}}">{{$beers->name}}</a></td>
                     <td>{{$beers->alchool_graduation}}</td>
                     <td>{{$beers->fermentation_type}}</td>
                     <td>{{$beers->color}}</td>
-                    <td><img src="{{$beers->image}}" alt="" style="height: 100px"></td>
+                    <td><a href="beers/{{$beers->id}}"><img src="{{$beers->image}}" alt="" style="height: 100px"></a></td>
                 </tr>
             @endforeach
         </tbody>
       </table>
-</body>
-</html>
+</div>
+@endsection
