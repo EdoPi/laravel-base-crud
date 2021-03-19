@@ -31,10 +31,24 @@
     .list-table{
         font-size: 18px;
 
+
         > td{
             vertical-align: middle;
+
+            .action-button{
+                margin-right: 15px;
+            }
+
         }
+
+
     }
+
+    .beers-table > td{
+        background-color: white;
+    }
+
+
 }
 
 .description-container > p{
@@ -46,5 +60,11 @@ h3{
     text-align: center;
 }
 
+
+.form-container{
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
 
 
