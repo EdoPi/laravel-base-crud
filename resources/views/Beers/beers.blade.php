@@ -14,7 +14,7 @@
             <th scope="col">Fermentazione</th>
             <th scope="col">Colorazione</th>
             <th scope="col">Foto</th>
-            <th scope="col"><a class="btn btn-primary" href="/beers/create" role="button">ADD NEW ITEM</a></th>
+            <th scope="col"><a class="btn btn-light" href="/beers/create" role="button">ADD NEW ITEM</a></th>
           </tr>
         </thead>
         <tbody>
@@ -26,7 +26,7 @@
                     <td>{{$beers->fermentation_type}}</td>
                     <td>{{$beers->color}}</td>
                     <td><a href="beers/{{$beers->id}}"><img src="{{$beers->image}}" alt="" style="height: 100px"></a></td>
-                    <td><a class="btn btn-primary action-button" href="/beers/create" role="button">EDIT</a><a class="btn btn-primary" href="/beers/create" role="button">DELETE</a></td>
+                    <td><a class="btn btn-success action-button" href="beers/{{$beers->id}}" role="button">DETAIL</a><a class="btn btn-primary action-button" href="#" role="button">EDIT</a><a class="btn btn-danger" href="#" role="button">DELETE</a></td>
                 </tr>
             @endforeach
         </tbody>

@@ -37,6 +37,17 @@ class BeerController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|max:20',
+            'alchool_graduation' => 'required|digits:3|numeric',
+            'fermentation_type' => 'required|max:20',
+            'color' => 'required|max:20',
+            'image' => 'required|url',
+            'description' => 'max:10000',
+
+            ]);
+
+
         $data = $request -> all();
 
 
