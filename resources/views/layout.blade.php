@@ -10,15 +10,6 @@
 
 </head>
 <body>
-    @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-        @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-        @endforeach
-        </ul>
-    </div>
-    @endif
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">Navbar</a>

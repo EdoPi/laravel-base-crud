@@ -1,3 +1,5 @@
+
+
 @extends('layout')
 
 @section('main-content')
@@ -26,7 +28,15 @@
                     <td>{{$beers->fermentation_type}}</td>
                     <td>{{$beers->color}}</td>
                     <td><a href="beers/{{$beers->id}}"><img src="{{$beers->image}}" alt="" style="height: 100px"></a></td>
-                    <td><a class="btn btn-success action-button" href="beers/{{$beers->id}}" role="button">DETAIL</a><a class="btn btn-primary action-button" href="#" role="button">EDIT</a><a class="btn btn-danger" href="#" role="button">DELETE</a></td>
+                    <td>
+                        <button class="btn btn-success action-button"><a href="beers/{{$beers->id}}" role="button">DETAIL</a></button>
+                        <button class="btn btn-primary" type="submit" value="submit"><a href="beers/{{$beers->id}}/edit">EDIT</a></button>
+                        <form class ="delete" action="{{route('beers.destroy', ['beer'=> $beers->id])}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger" type="submit" value="submit">DELETE</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

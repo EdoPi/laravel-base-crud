@@ -39,7 +39,7 @@ class BeerController extends Controller
     {
         $request->validate([
             'name' => 'required|max:20',
-            'alchool_graduation' => 'required|digits:3|numeric',
+            'alchool_graduation' => 'required|between:0,9999.99|numeric',
             'fermentation_type' => 'required|max:20',
             'color' => 'required|max:20',
             'image' => 'required|url',
@@ -78,9 +78,9 @@ class BeerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Beer $beer)
     {
-        //
+        return view('Beers.edit', compact('beer'));
     }
 
     /**
@@ -90,9 +90,12 @@ class BeerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Beer $beer)
     {
-        //
+        $data = $request -> all();
+        $beer -> update($data);
+
+        return redirect()->route('beers.show', compact('beer'));
     }
 
     /**
@@ -101,8 +104,10 @@ class BeerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Beer $beer)
     {
-        //
+        $beer -> delete();
+
+        return redirect()->route('beers.index');
     }
 }
